@@ -17,7 +17,12 @@
 			<h1>Bem-vindo a Ciclo Peças o Coquinho</h1>
 		</div>
 		<nav>
-			<ul>
+			<button class="hamburger" id="hamburger">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+			</button>
+			<ul id="nav-menu">
 				<li><a href="#sobre">Sobre</a></li>
 				<li><a href="#produtos">Produtos</a></li>
 				<li><a href="#contato">Contato</a></li>
@@ -100,6 +105,15 @@
 		<p>&copy; 2025 Ciclo Peças o Coquinho. Todos os direitos reservados.</p>
 
 	</footer>
+
+	<script>
+		const hamburger = document.getElementById('hamburger');
+		const navMenu = document.getElementById('nav-menu');
+
+		hamburger.addEventListener('click', () => {
+			navMenu.classList.toggle('active');
+		});
+	</script>
 </body>
 
 </html>

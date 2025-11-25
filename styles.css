@@ -5,12 +5,12 @@
 }
 
 body {
-  font-family: 'arial', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: url('./imagens/pecas-de-moto-1200x900.jpg') no-repeat center center fixed;
-  background-size: cover;
- 
+    font-family: 'arial', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('./imagens/pecas-de-moto-1200x900.jpg') no-repeat center center fixed;
+    background-size: cover;
+
 }
 
 header {
@@ -47,6 +47,7 @@ h2 {
     color: #9c2004;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
+
 p {
     font-size: 1.5rem;
     line-height: 1.6;
@@ -65,27 +66,55 @@ ul {
     width: 300px;
     height: auto;
     flex-shrink: 0;
-    
+
 }
+
 logo:hover {
     transform: scale(0.8);
-    
+
 }
 
 
-nav ul li {
+nav {
+    position: relative;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(43, 43, 43);
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+#nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+#nav-menu li {
     display: inline-block;
     margin-left: 5px;
     margin-top: 15px;
-    
 }
-nav ul li a {
+
+#nav-menu li a {
     color: rgb(43, 43, 43);
     text-decoration: none;
     font-weight: bold;
     font-size: 25px;
     padding: 10px;
-    
 }
 
 #sobre {
@@ -124,6 +153,7 @@ nav ul li a {
     margin: 15px;
     border-radius: 10px;
 }
+
 .img-produtos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -163,7 +193,47 @@ footer {
     margin-top: 20px;
 }
 
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
 
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(250, 152, 6, 0.9);
+        padding: 10px 0;
+        z-index: 1;
+    }
 
+    #nav-menu.active {
+        display: flex;
+    }
 
+    #nav-menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
 
+    h1 {
+        display: none;
+
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p,
+    nav ul li a {
+        font-size: 1.2rem;
+    }
+
+    .logo {
+        width: 200px;
+    }
+}
