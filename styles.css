@@ -236,4 +236,9 @@ footer {
     .logo {
         width: 200px;
     }
+
+    iframe {
+        width: 100%;
+        height: auto;
+    }
 }
